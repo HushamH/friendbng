@@ -63,10 +63,21 @@ public class SignInActivity extends ActionBarActivity {
         User.logInInBackground(email.getText().toString(), password.getText().toString(), new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
-                if(user != null){
-                    Toast.makeText(SignInActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
-                }else{
-                    Toast.makeText(SignInActivity.this, "Sign In Failed", Toast.LENGTH_SHORT).show();
+                if (user != null) {
+                    User appUser = (User) user;
+                    if(!((boolean)appUser.get("emailVerified"))==true){
+                        Toast.makeText(SignInActivity.this, "E-mail has not been verified", Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(SignInActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    if(e.getCode() == ParseException.CONNECTION_FAILED || e.getCode() == ParseException.TIMEOUT){
+                        Toast.makeText(SignInActivity.this, "Connection Failed", Toast.LENGTH_SHORT).show();
+                    }else if(e.getCode() == ParseException.EMAIL_NOT_FOUND){
+                        Toast.makeText(SignInActivity.this, "No User with the specified E-mail", Toast.LENGTH_SHORT).show();
+                    }else {
+                        Toast.makeText(SignInActivity.this, "Sign In Failed", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

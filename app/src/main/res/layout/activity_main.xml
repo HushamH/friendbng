@@ -13,7 +13,7 @@
          android:fitsSystemWindows. -->
     <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        android:background="@drawable/friendBangBG">
+        android:background="@drawable/friend_bang_bg">
 
         <LinearLayout android:id="@+id/fullscreen_content_controls" style="?metaButtonBarStyle"
             android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -24,17 +24,18 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="@dimen/main_activity_button_weight"
+                android:layout_weight="@integer/main_activity_button_weight"
                 android:text="Sign In"
                 android:id="@+id/signIn"
                 android:layout_gravity="top|right"
                 android:background="@drawable/rounded_button"
-                android:layout_margin="15dp"/>
+                android:layout_margin="15dp"
+                android:onClick="launchSignIn" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="@dimen/main_activity_button_weight"
+                android:layout_weight="@integer/main_activity_button_weight"
                 android:text="Sign Up"
                 android:id="@+id/signUp"
                 android:onClick="launchSignUp"

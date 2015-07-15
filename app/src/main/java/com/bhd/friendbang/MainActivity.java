@@ -162,7 +162,12 @@ public class MainActivity extends Activity {
     }
 
     public void launchSignUp(View view){
-        Intent intent = new Intent(this,SignInActivity.class);
+        Intent intent = new Intent(this,SignUpActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchSignIn(View view){
+        Intent intent = new Intent(this, SignInActivity.class);
         startActivity(intent);
     }
 }

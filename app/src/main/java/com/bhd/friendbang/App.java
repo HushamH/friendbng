@@ -23,10 +23,13 @@ public class App extends Application {
 
         // Add your initialization code here
         Parse.initialize(this, "KPmiNEQczB5mxOyCb8KZJ4zgIHGrRiVdY71WbnOd", "ucxRJ1LLX0E5O7OE9fcwEuGqL53FjJ5a3IwuQhX9");
+        ParseUser.enableRevocableSessionInBackground();
 
         ParseACL defaultACL = new ParseACL();
         // Optionally enable public read access.
         // defaultACL.setPublicReadAccess(true);
         ParseACL.setDefaultACL(defaultACL, true);
+
+        ParseUser.registerSubclass(User.class);
     }
 }

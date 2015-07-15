@@ -2,6 +2,7 @@ package com.bhd.friendbang;
 
 import android.media.Image;
 
+import com.parse.ParseClassName;
 import com.parse.ParseUser;
 
 import java.util.Date;
@@ -9,12 +10,16 @@ import java.util.Date;
 /**
  * Created by sdhond on 2015-07-06.
  */
+
+@ParseClassName("_User")
 public class User extends ParseUser {
     private String name;
     private Image profilePic;
     private Date dateOfBirth;
 
-    public User(String name, Date dateOfBirth, String email ){
+    public User(){}
+
+    public User(String name, Date dateOfBirth, String email){
         this.name = name;
         super.setEmail(email);
         this.dateOfBirth = dateOfBirth;
