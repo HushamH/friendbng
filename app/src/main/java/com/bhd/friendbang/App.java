@@ -5,6 +5,7 @@ import android.app.Application;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseCrashReporting;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 /**
@@ -31,5 +32,6 @@ public class App extends Application {
         ParseACL.setDefaultACL(defaultACL, true);
 
         ParseUser.registerSubclass(User.class);
+        ParseObject.registerSubclass(Group.class);
     }
 }

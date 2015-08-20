@@ -65,7 +65,7 @@ public class SignInActivity extends ActionBarActivity {
             public void done(ParseUser user, ParseException e) {
                 if (user != null) {
                     User appUser = (User) user;
-                    if(!((boolean)appUser.get("emailVerified"))==true){
+                    if(!(Boolean)appUser.get("emailVerified")){
                         Toast.makeText(SignInActivity.this, "E-mail has not been verified", Toast.LENGTH_SHORT).show();
                     }else{
                         Toast.makeText(SignInActivity.this, "Welcome", Toast.LENGTH_SHORT).show();

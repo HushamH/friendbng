@@ -38,6 +38,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.bhd.friendbang.MainActivity" />
         </activity>
+        <activity
+            android:name=".GroupSelectActivity"
+            android:label="@string/title_activity_group_select"
+            android:parentActivityName=".SignInActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bhd.friendbang.SignInActivity" />
+        </activity>
+        <activity
+            android:name=".UploadPhotoActivity"
+            android:label="@string/title_activity_upload_photo"
+            android:parentActivityName=".GroupSelectActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.bhd.friendbang.GroupSelectActivity" />
+        </activity>
     </application>
 
 </manifest>
